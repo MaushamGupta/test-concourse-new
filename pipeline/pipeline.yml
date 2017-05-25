@@ -11,4 +11,4 @@ jobs:
   - get: test-git-resource
     trigger: true
   - task: test
-    file: test-git-resource/pipeline/test.yml
+    file: ./test-git-resource/pipeline/test.yml

@@ -10,6 +10,8 @@ jobs:
   plan:
   - get: test-git-resource
     trigger: true
-    path: .
+	inputs:
+    - name: test-git-resource
+      path: .
   - task: test
-    file: pipeline/test.yml
+    file: ./pipeline/test.yml

@@ -2,8 +2,8 @@ resources:
 - name: test-git-resource
   type: git
   source:
-    uri: https://github.com/MaushamGupta/test-concourse
-    branch: maste
+    uri: https://github.com/MaushamGupta/test-concourse-new.git
+    branch: master
 
 jobs:
 - name: test

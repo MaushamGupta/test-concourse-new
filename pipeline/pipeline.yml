@@ -11,5 +11,4 @@ jobs:
   - get: test-git-resource
     trigger: true
   - task: test
-    image: "docker:///node#6.10.0"
     file: test-git-resource/pipeline/test.yml

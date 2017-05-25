@@ -1,0 +1,14 @@
+resources:
+- name: test-git-resource
+  type: git
+  source:
+    uri: https://github.com/MaushamGupta/test-concourse
+    branch: maste
+
+jobs:
+- name: test
+  plan:
+  - get: test-git-resource
+    trigger: true
+  - task: test
+    file: test-git-resource/pipeline/test.yml

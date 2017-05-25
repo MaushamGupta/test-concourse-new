@@ -3,7 +3,3 @@ inputs:
   - name: test-git-resource
 run:
   path: ./test-git-resource/pipeline/install.sh
-  args:
-  - -exc
-  - |
-    ls -R ./app_sources

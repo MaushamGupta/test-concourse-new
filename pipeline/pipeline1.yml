@@ -1,0 +1,34 @@
+resources:
+- name: test-git-resource
+  type: git
+  source:
+    uri: https://github.com/MaushamGupta/test-concourse-new.git
+    branch: master
+jobs:
+- name: Unit-Test
+  plan:
+  - get: test-git-resource
+    trigger: true
+  - task: setPermissions
+    file: test-git-resource/pipeline/test.yml
+    
+- name: Integration-Test
+  plan:
+  - get: test-git-resource  
+    passed: [Unit-Test]
+    trigger: true  
+  - task: integration
+    config:
+      platform: linux
+      inputs:
+      - name: test-git-resource        
+      image_resource:
+        type: docker-image
+        source: {repository: node, tag: "6" }
+      run:
+        path: sh
+        args:
+        - -exc
+        - |
+         ls -R ./test-git-resource
+

@@ -5,4 +5,10 @@ image_resource:
     type: docker-image
     source: {repository: node, tag: "6" }
 run:
-    path: ./test-git-resource/pipeline/install.sh
+    path: sh
+    args:
+    - -exc
+    - |
+      cd test-git-resource
+      chmod +x install.sh
+      install.sh

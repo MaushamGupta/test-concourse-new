@@ -10,5 +10,5 @@ run:
     - -exc
     - |
       cd test-git-resource
-      chmod +x install.sh
+      chmod +x pipeline/install.sh
       install.sh

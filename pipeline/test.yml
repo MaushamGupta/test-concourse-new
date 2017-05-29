@@ -9,7 +9,5 @@ run:
     args:
     - -exc
     - |
-      cd test-git-resource
-      chmod +x pipeline/install.sh
-      cd pipeline 
-      install.sh
+      cd test-git-resource/pipeline
+      chmod +x install.sh

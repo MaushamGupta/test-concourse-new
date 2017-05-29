@@ -1,5 +1,4 @@
 platform: linux
-image: "docker:///node#6.10.0"
 inputs:
    - name: test-git-resource
 run:

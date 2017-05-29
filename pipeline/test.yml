@@ -11,4 +11,5 @@ run:
     - |
       cd test-git-resource
       chmod +x pipeline/install.sh
+      cd pipeline 
       install.sh
